@@ -1,0 +1,52 @@
+{
+  "recipes": [
+    {
+      "id": 1,
+      "title": "abababa",
+      "ingred": [
+        "sdfs",
+        "dsfs",
+        "fddgf"
+      ],
+      "method": "mdlvml;",
+      "time": 100
+    },
+    {
+      "id": 2,
+      "title": "ababafdssdsa",
+      "ingred": [
+        "sdfvdfvs",
+        "dsfkllkljls",
+        "fddjklgf"
+      ],
+      "method": "mdlvaaaaaaaal;",
+      "time": 99
+    },
+    {
+      "title": "",
+      "listIngredients": [],
+      "method": "",
+      "time": "",
+      "id": 3
+    },
+    {
+      "title": "kljlj",
+      "listIngredients": [
+        "jkljlj"
+      ],
+      "method": "",
+      "time": "1",
+      "id": 4
+    },
+    {
+      "title": "kljljlk",
+      "listIngredients": [
+        "kljljl",
+        "aaaa"
+      ],
+      "method": "ajljlkjkljl",
+      "time": "3",
+      "id": 5
+    }
+  ]
+}
