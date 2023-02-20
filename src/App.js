@@ -3,12 +3,13 @@ import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
 import Navbar from './Components/Navbar';
 import Create from './Components/Pages/Create';
 import Home from './Components/Pages/Home';
-import { APIContextProvider } from './Components/useContext';
 import RecipeDetails from './Components/Pages/RecipeDetails';
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
 
 function App() {
   return (
-    <APIContextProvider>
+    <Provider store={store}>
     <Router>
       <Navbar/>
       <Routes>
@@ -17,7 +18,7 @@ function App() {
         <Route path="/recipes/:id" element={<RecipeDetails/>} />
       </Routes>
     </Router>
-    </APIContextProvider>
+    </Provider>
   );
 }
 
