@@ -1,6 +1,7 @@
 import {useParams } from "react-router-dom";
 import { useAPI } from "../useContext";
 import useFetch from "../useFetch";
+import { Ingredients, Method, RecipeDet, Time, Title } from "../../Styles/RecipeDetails.style";
 
 const RecipeDetails = () => {
     const {id} = useParams()
@@ -8,18 +9,18 @@ const RecipeDetails = () => {
     const {data: recipe, error, isPending} = useFetch(url + id)
 
     return (
-        <div className="recipe-details">
+        <RecipeDet className="recipe-details">
             {isPending &&<div>Loading...</div>}
             {error &&<div>{error}</div>}
             {recipe && (
                 <article>
-                    <h1>{recipe.title}</h1>
-                    <h2>{recipe.time} minutes to cook</h2>
-                    <p className="ing">{recipe.listIngredients.join(',')}</p>
-                    <div>{recipe.method}</div>
+                    <Title>{recipe.title}</Title>
+                    <Time>{recipe.time} minutes to cook</Time>
+                    <Ingredients className="ing">{recipe.listIngredients.join(',')}</Ingredients>
+                    <Method>{recipe.method}</Method>
                 </article>
             )}
-        </div>
+        </RecipeDet>
     );
 }
 

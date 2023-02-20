@@ -1,6 +1,8 @@
 import { useState } from "react";
 import {useNavigate } from "react-router-dom";
 import { useAPI } from "../useContext";
+import { CreateForm, CreateRecipe, CreateTitle, Inputfield, Inputtext, Bothbuttons } from "../../Styles/Create.style";
+
 
 const Create = () => {
   const [title, setTitle] = useState('');
@@ -33,42 +35,42 @@ const Create = () => {
   }
 
   return (
-    <div className="create">
-      <h2>New recipe</h2>
-      <form onSubmit={handleSubmit}>
+    <CreateRecipe className="create">
+      <CreateTitle>New recipe</CreateTitle>
+      <CreateForm onSubmit={handleSubmit}>
         <label>Recipe title:</label>
-        <input 
+        <Inputfield
           type="text" 
           required 
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
         <label>Recipe ingredients:</label>
-        <input
+        <Inputfield
           type="text"
           value={ingredients}
           onChange={(e) => setIngredients(e.target.value)}
         />
-        <button type="button" onClick={handleIngredients}>Add</button>
+        <Bothbuttons type="button" onClick={handleIngredients}>Add</Bothbuttons>
         <p>Current ingredients: {listIngredients.toString()}</p>
         <label>Recipe method:</label>
-        <textarea
+        <Inputtext
         required
         value={method}
         onChange={(e) => setMethod(e.target.value)}
         />
         <label>Cooking time (in minutes):</label>
-        <input
+        <Inputfield
         type="number"
         min="0"
         required
         value={time}
         onChange={(e) => setTime(e.target.value)}
         />
-        {!isPending && <button type="submit">Submit</button>}
-        {isPending && <button disabled>Submiting...</button>}
-      </form>
-    </div>
+        {!isPending && <Bothbuttons type="submit">Submit</Bothbuttons>}
+        {isPending && <Bothbuttons disabled>Submiting...</Bothbuttons>}
+      </CreateForm>
+    </CreateRecipe>
   );
 }
  
